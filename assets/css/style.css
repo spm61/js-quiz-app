@@ -29,7 +29,7 @@ p{
     margin: auto;
 }
 
-.answer-choices{ /*will be applied by JS when answer choices are spawned on the page */
+.answer-choice{ /*will be applied by JS when answer choices are spawned on the page */
     display: block;
     margin: 10px;
 }
