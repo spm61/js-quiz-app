@@ -1,0 +1,35 @@
+body{
+    font-family:'Courier New', Courier, monospace;
+    font-size: larger;
+    background-color: orange;
+}
+
+section{ /*most areas besides the title are hidden at first */
+    background-color: white;
+    border: solid 2px blue;
+    padding: 10px;
+}
+.hidden {
+    display: none;
+}
+
+.shown { /*use JS to switch this with hidden to display things*/
+    display: block;
+}
+h1{
+    text-align: center;
+}
+
+p{
+    padding: 10%;
+}
+
+#begin-button{
+    display: block;
+    margin: auto;
+}
+
+.answer-choices{ /*will be applied by JS when answer choices are spawned on the page */
+    display: block;
+    margin: 10px;
+}
