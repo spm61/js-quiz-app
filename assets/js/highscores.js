@@ -1,7 +1,8 @@
 var clearButton = document.getElementById("clear-button");
 
 function showHighscores() {
-    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || []; //get the high scores from storage, or an empty array if there aren't any.
+    console.log(window.localStorage.getItem("scores"));
+    var highscores = JSON.parse(window.localStorage.getItem("scores")); //get the high scores from storage, or an empty array if there aren't any.
   
     //sort the high-scores by the score property, in decending order from top to bottom.
     highscores.sort(function(a, b) {

@@ -5,7 +5,7 @@ var time = 120
 var timerInterval;
 
 //DOM Reference Area
-var timeElemment = document.querySelector("#time");
+var timeElement = document.querySelector("#time");
 var beginButton = document.querySelector("#begin-button");
 var submitButton = document.querySelector("#submit-button");
 var titleArea = document.querySelector("#title-area");
@@ -34,7 +34,7 @@ function beginQuiz() {
   function timeTick() {
     //decrements time and displays it.
     time--;
-    timeEl.textContent = time;
+    timeElement.textContent = time;
   
     //Did we run out of time?  If we did the game is over.
     if (time <= 0) {
@@ -49,7 +49,7 @@ function beginQuiz() {
   
     //Show the question on the display
     var titleArea = document.getElementById("question-name");
-    titleArea.textContent = currentQuestion.title;
+    titleArea.textContent = currentQuestion.question;
   
     //throw out the old question choices because we don't need them anymore.
     answerChoices.innerHTML = "";
@@ -63,7 +63,7 @@ function beginQuiz() {
   
       singleChoice.textContent = i + 1 + ". " + choice; //number the choices iteratively
       singleChoice.onclick = selectAnswer; //listen for if the button was clicked upon
-      answerChoices.appendChild(choiceNode); //render the answer choice on the page. 
+      answerChoices.appendChild(singleChoice); //render the answer choice on the page. 
     });
   }
 
@@ -75,7 +75,7 @@ function beginQuiz() {
       if (time < 0) {
         time = 0;
       }
-      timeEl.textContent = time; //update the new time.
+      timeElement.textContent = time; //update the new time.
       rightOrWrongDisplay.textContent = "INCORRECT!";
     } else {
 
@@ -91,7 +91,7 @@ function beginQuiz() {
     currentQuestionNum++;
   
     //Did we reach the end of the quiz?
-    if (currentQuestionIndex === questions.length) {
+    if (currentQuestionNum === questions.length) {
       endQuiz();
     } else {
       showQuestion(); //if we didn't that means we still have a game to play.
@@ -100,8 +100,8 @@ function beginQuiz() {
 
 
 //end the quiz, invoked when time runs out or we answer every question
-  function quizEnd() {
-    clearInterval(timerId); //get rid of the timer, it is no longer necessary.
+  function endQuiz() {
+    clearInterval(timerInterval); //get rid of the timer, it is no longer necessary.
   
     //show the results and score submission display
     var highscoreSection = document.querySelector("#highscore-area");
@@ -142,7 +142,7 @@ function saveScore() {
   function isEnterPushed(event) {
     // "13" represents the enter key
     if (event.key === "Enter") {
-      saveHighscore();
+      saveScore();
     }
   }
   //Events being listened for.
