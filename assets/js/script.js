@@ -132,7 +132,7 @@ function saveScore() {
 
       //Add the new score in with the other scores and then add to local storage as a JSON String.
       storedScores.push(newScore);
-      window.localStorage.setItem("highscores", JSON.stringify(storedScores));
+      window.localStorage.setItem("scores", JSON.stringify(storedScores));
   
       //go to the page to see the list of high scores.
       window.location.href = "highscores.html";
@@ -147,10 +147,12 @@ function saveScore() {
   }
   //Events being listened for.
   // user clicks button to submit initials
-  submitButton.onclick = saveScore;
+  submitButton.addEventListener("click", saveScore);
+  
   // user clicks button to start quiz
-  beginButton.onclick = beginQuiz
-  initialsInput.onkeyup = isEnterPushed; //submit highscores by pressing enter.
+  beginButton.addEventListener("click", beginQuiz);
+   //submit highscores by pressing enter.
+  intialsInput.addEventListener("onkeyup", isEnterPushed);
 
 
 

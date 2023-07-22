@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="css" href="./assets/css/style.css">
-    <title>JavaScript Coding Quiz!!</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="css" href="./assets/css/style.css">
+        <title>JavaScript Coding Quiz!!</title>
+    </head>
 
-<body>
-    <div class="container">
-        <!--Fixed Top Area-->
-        <header class="row">
-            <div class="col-small" id="score-link">
-                <a href="./highscores.html">Go to High Scores!</a>
-            </div>
-            <div class="col-small" id="timer">
-                Time: <span id="time">0</span>
-            </div>
-
-        </header>
-
-        <!--Area that shows the title and instructions, along with the start button.-->
-        <section id="title-area" class="show">
-            <div class="row">
-                <div class="col-big">
-                    <h1>JavaScript Coding Quiz</h1>
+    <body>
+        <div class="container">
+            <!--Fixed Top Area-->
+            <header class="row">
+                <div class="col-small" id="score-link">
+                    <a href="./highscores.html">Go to High Scores!</a>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-big">
-                    <p>Answer the provided questions within the time limit.  Wrong answers cost you 10 seconds.  You can save your score when you're done.</p>
+                <div class="col-small" id="timer">
+                    Time: <span id="time">0</span>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-big">
-                    <button id="startButton">Start Quiz</button>
+
+            </header>
+
+            <!--Area that shows the title and instructions, along with the start button.-->
+            <section id="title-area" class="show">
+                <div class="row">
+                    <div class="col-big">
+                        <h1>JavaScript Coding Quiz</h1>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!--Area that contains the actual quiz.  The questions and feedback are handled by the JS.-->
-        <section id="quiz-area" class="hidden">
-            <div class="row">
-                <div class="col-big questions">
-                    <h3 id="question-name"></h3>
+                <div class="row">
+                    <div class="col-big">
+                        <p>Answer the provided questions within the time limit.  Wrong answers cost you 10 seconds.  You can save your score when you're done.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-big" id="answer-choices"></div>
-                <div id="rightorwrong" class="rightorwrong hidden"></div>
-            </div>
-        </section>
-
-        <!--This section governs the results and high-score submission.-->
-        <section id="highscore-area" class="hidden">
-            <div class="row">
-                <div id="results" class="col-big"></div>
-                    <h2>Done!</h2>
-                    <h3>Your final score is <span id="final-score">0</span></h3>
-                    <label for="initials-box">Enter initials:</label>
-                    <input type="text" name="initials-box" maxlength="4" id="user-initials">
-                    <button id="submit-button" type="submit">Submit</button>
+                <div class="row">
+                    <div class="col-big">
+                        <button id="begin-button">Start Quiz</button>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <script type="text/javascript" src="./assets/js/script.js"></script>
+            <!--Area that contains the actual quiz.  The questions and feedback are handled by the JS.-->
+            <section id="quiz-area" class="hidden">
+                <div class="row">
+                    <div class="col-big questions">
+                        <h3 id="question-name"></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-big" id="answer-choices"></div>
+                    <div id="rightorwrong" class="rightorwrong hidden"></div>
+                </div>
+            </section>
 
+            <!--This section governs the results and high-score submission.-->
+            <section id="highscore-area" class="hidden">
+                <div class="row">
+                    <div id="results" class="col-big"></div>
+                        <h2>Done!</h2>
+                        <h3>Your final score is <span id="final-score">0</span></h3>
+                        <label for="initials-box">Enter initials:</label>
+                        <input type="text" name="initials-box" maxlength="4" id="user-initials">
+                        <button id="submit-button" type="submit">Submit</button>
+                    </div>
+                </div>
+            </section>
 
-</body>
+            <!--refer to the javascript files-->
+            <script type="text/javascript" src="./assets/js/quizquestions.js"></script>
+            <script type="text/javascript" src="./assets/js/script.js"></script>
+            <script type="text/javascript" src="./assets/js/highscores.js"></script>
+    </body>
 
 </html>
