@@ -1,8 +1,8 @@
 //These are questions that will be asked during the quiz.  They'll be shown in order
 var questions = [
     {
-        question: "Which of these datatypes is not commonly used?",
-        choices: ["stings", "prompts", "booleans", "numbers"],
+        question: "Which of these datatypes is NOT commonly used?",
+        choices: ["strings", "prompts", "booleans", "numbers"],
         answer: "prompts"
     },
     {
